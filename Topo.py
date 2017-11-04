@@ -27,7 +27,7 @@ class Topo(Topo):
         self.hosts = []
         for h in range(n):
             host = self.addHost('h%s' % (h + 1))
-            self.addLink(host, edge[host%len(edge)])
+            self.addLink(host, edge[h%len(edge)])
             self.hosts.append(host)
 
 def simpleTest():
