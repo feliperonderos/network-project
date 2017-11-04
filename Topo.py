@@ -43,8 +43,7 @@ def simpleTest():
     IPstr = str(h[0].IP())
     for i in range(len(h)):
         if i == 0:
-            h[i].cmd('while true; do date; sleep 1; done > /tmp/date.out &')
-            h[i].cmd("python Server.py > server.txt")
+            h[i].cmd("python Server.py > server.txt &")
         else:
             h[i].cmd("python Client.py "+ IPstr)
         time.sleep(1)
