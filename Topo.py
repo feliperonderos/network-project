@@ -42,7 +42,7 @@ def simpleTest():
     h = net.hosts
     for i in range(len(h)):
         if i == 0:
-            h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' > lala.txt """")
+            h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' > lala.txt """)
 
     """
     
