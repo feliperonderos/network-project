@@ -32,16 +32,19 @@ class Topo(Topo):
             self.addLink(host, edge[h%len(edge)])
             self.hostList.append(host)
 
-def simpleTest():
+def simpleTest(self):
     "Create and test a simple network"
     topo = Topo(n=64)
     net = Mininet(topo)
     net.start()
+    print self.hostList
+    """
     print "Dumping host connections"
     dumpNodeConnections(net.hosts)
     print "Testing network connectivity"
     net.pingAll()
     net.stop()
+    """
 
 if __name__ == '__main__':
     # Tell mininet to print useful information
