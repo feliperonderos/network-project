@@ -37,6 +37,7 @@ def simpleTest():
     topo = Topo(n=64)
     net = Mininet(topo)
     net.start()
+    """
     h = net.hosts
     for i in range(len(h)):
         if i == 0:
@@ -47,7 +48,6 @@ def simpleTest():
     dumpNodeConnections(net.hosts)
     print "Testing network connectivity"
     net.pingAll()
-    """
     net.stop()
 
 if __name__ == '__main__':
