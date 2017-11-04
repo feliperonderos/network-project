@@ -44,6 +44,7 @@ def simpleTest():
     for i in range(len(h)):
         if i == 0:
             h[i].cmd("python Server.py > server.txt &")
+            h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt &""")
         else:
             h[i].cmd("python Client.py "+ IPstr)
         time.sleep(1)
