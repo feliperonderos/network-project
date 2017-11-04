@@ -31,13 +31,12 @@ class Topo(Topo):
         self.hostList = []
         for h in range(n):
             host = self.addHost('h%s' % (h + 1), cpu=.5/n)
-            print h
             self.addLink(host, edge[h%len(edge)])
             self.hostList.append(host)
 
 def simpleTest():
     "Create and test a simple network"
-    topo = Topo(n=64)
+    topo = Topo(n=8)
     net = Mininet(topo,host=CPULimitedHost)
     net.start()
     h = net.hosts
