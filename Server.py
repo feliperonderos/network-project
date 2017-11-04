@@ -3,6 +3,7 @@ port = 12001
 s = socket(AF_INET,SOCK_STREAM)
 s.bind(("",port))
 s.listen(1)
+print "New sdaasadsconnection"
 while True:
   connectionSock, addr = s.accept()
   print "New connection"
