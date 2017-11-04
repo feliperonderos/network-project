@@ -24,11 +24,11 @@ class Topo(Topo):
                 a = self.addSwitch(('s' + str(counter + 1)))
                 edge.append(a)
                 self.addLink(a,m)
-        self.hosts = []
+        self.hostList = []
         for h in range(n):
             host = self.addHost('h%s' % (h + 1))
             self.addLink(host, edge[h%len(edge)])
-            self.hosts.append(host)
+            self.hostList.append(host)
 
 def simpleTest():
     "Create and test a simple network"
