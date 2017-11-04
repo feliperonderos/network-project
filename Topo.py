@@ -9,7 +9,7 @@ from mininet.log import setLogLevel
 
 class Topo(Topo):
     def build(self, n=8):
-        counter = 2
+        counter = 1
         branching_factor = 2
         core = [self.addSwitch('s1')]
         aggregation = []
