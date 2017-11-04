@@ -34,7 +34,7 @@ class Topo(Topo):
 
 def simpleTest():
     "Create and test a simple network"
-    topo = Topo(n=8)
+    topo = Topo(n=64)
     net = Mininet(topo)
     net.start()
     print "Dumping host connections"
