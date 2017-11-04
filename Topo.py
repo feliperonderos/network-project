@@ -17,13 +17,13 @@ class Topo(Topo):
         for h in core:
           for i in range(branching_factor):
             a = self.addSwitch(('s' + str(counter + 1)))
-    			  aggregation.append(a)
-    			  self.addLink(a,h)
-    		for h in aggregation:
+			aggregation.append(a)
+            self.addLink(a,h)
+		for h in aggregation:
           for i in range(branching_factor):
             a = self.addSwitch(('s' + str(counter + 1)))
-    			  edge.append(a)
-    			  self.addLink(a,h)
+    		edge.append(a)
+    		self.addLink(a,h)
     		self.hosts = []
         for h in range(n):
             host = self.addHost('h%s' % (h + 1))
