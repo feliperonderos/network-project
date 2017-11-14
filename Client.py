@@ -1,7 +1,7 @@
 from socket import *
 import sys
 f = open("cl.txt","a+")
-f.write(str(sys.argv[1]))
+f.write("hi")
 f.close()
 if len(sys.argv == 2):
   while True:
