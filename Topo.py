@@ -36,7 +36,7 @@ class Topo(Topo):
 
 def simpleTest():
     "Create and test a simple network"
-    topo = Topo(n=8)
+    topo = Topo(n=16)
     net = Mininet(topo,host=CPULimitedHost)
     net.start()
     h = net.hosts
@@ -60,9 +60,9 @@ def simpleTest():
     print "Testing network connectivity"
     net.pingAll()
     """
-    time.sleep(2)
+    #time.sleep(2)
     #net.pingAll()
-    net.stop()
+    #net.stop()
 
 if __name__ == '__main__':
     # Tell mininet to print useful information
