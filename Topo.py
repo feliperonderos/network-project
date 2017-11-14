@@ -48,7 +48,7 @@ def simpleTest():
             h[i].cmd("python Server.py &")
             #h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt &""")
         else:
-            h[i].cmd("python Client.py "+ IPstr)
+            h[i].cmd("python Client.py "+ IPstr + " " + str(i))
         
 
     """top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt """
