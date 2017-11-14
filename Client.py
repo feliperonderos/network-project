@@ -1,6 +1,6 @@
 from socket import *
 import sys
-f = open("cl.txt","a+")
+f = open("cl.txt","w+")
 f.write("hi")
 f.close()
 if len(sys.argv == 2):
@@ -9,7 +9,4 @@ if len(sys.argv == 2):
  	  s.connect((sys.argv[1],12001))
  	  s.send("poop".encode())
  	  reply = s.recv(1024)
- 	  f = open("cl.txt","a+")
- 	  f.write(reply)
- 	  f.close()
  	  s.close()
