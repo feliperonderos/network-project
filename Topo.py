@@ -40,6 +40,8 @@ def simpleTest():
     net = Mininet(topo,host=CPULimitedHost)
     net.start()
     h = net.hosts
+    f = open("cl.txt","w+")
+    f.close()
     IPstr = str(h[0].IP())
     for i in range(len(h)):
         if i == 0:
