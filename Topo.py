@@ -60,7 +60,7 @@ def simpleTest():
     print "Testing network connectivity"
     net.pingAll()
     """
-    time.sleep(10)
+    time.sleep(2)
     #net.pingAll()
     net.stop()
 
