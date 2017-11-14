@@ -49,7 +49,7 @@ def simpleTest():
             h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt &""")
         else:
             h[i].cmd("python Client.py "+ IPstr)
-        time.sleep(10)
+        
 
     """top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt """
 
@@ -60,6 +60,7 @@ def simpleTest():
     print "Testing network connectivity"
     net.pingAll()
     """
+    time.sleep(10)
     net.pingAll()
     net.stop()
 
