@@ -45,8 +45,8 @@ def simpleTest():
     IPstr = str(h[0].IP())
     for i in range(len(h)):
         if i == 0:
-            h[i].cmd("python Server.py > server.txt &")
-            h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt &""")
+            h[i].cmd("python Server.py &")
+            #h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt &""")
         else:
             h[i].cmd("python Client.py "+ IPstr)
         
@@ -61,7 +61,7 @@ def simpleTest():
     net.pingAll()
     """
     time.sleep(10)
-    net.pingAll()
+    #net.pingAll()
     net.stop()
 
 if __name__ == '__main__':

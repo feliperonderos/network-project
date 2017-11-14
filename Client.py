@@ -1,5 +1,8 @@
 from socket import *
 import sys
+f = open("cl.txt","a+")
+f.write(sys.argv[1])
+f.close()
 if len(sys.argv == 2):
   while True:
   	s = socket(AF_INET,SOCK_STREAM)
@@ -10,4 +13,3 @@ if len(sys.argv == 2):
  	  f.write(reply)
  	  f.close()
  	  s.close()
- 	  
