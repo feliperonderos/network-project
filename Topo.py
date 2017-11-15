@@ -51,7 +51,7 @@ def simpleTest():
         if i == 0:
             h[i].cmd("python Server.py &")
         elif i == 1:
-            h[i].cmd("python TestClient.py &")
+            h[i].cmd("python TestClient.py "+IPstr + " &")
 
             #h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt &""")
         else:
