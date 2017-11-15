@@ -60,8 +60,9 @@ def simpleTest():
     print "Testing network connectivity"
     net.pingAll()
     """
-    #time.sleep(2)
-    net.pingAll()
+    
+    time.sleep(10)
+    #net.pingAll()
     net.stop()
 
 if __name__ == '__main__':
