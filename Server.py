@@ -56,4 +56,7 @@ s = socket(AF_INET,SOCK_DGRAM)
 s.bind(("",12001))
 while True:
 	msg, addr = s.recvfrom(1024)
+	f = open("s.txt","a+")
+	f.write(msg+"\n")
+	f.close()
 	s.sendto(msg.encode().upper(),addr)

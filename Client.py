@@ -21,6 +21,6 @@ import sys
 import time
 
 s = socket(AF_INET,SOCK_DGRAM)
+st ="".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000))
 while True:
-	time.sleep(2)
-	s.sendto("hi".encode(),(sys.argv[1],12001))
+	s.sendto(st.encode(),(sys.argv[1],12001))
