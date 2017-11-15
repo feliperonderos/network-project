@@ -6,6 +6,7 @@ from mininet.topo import Topo
 from mininet.net import Mininet
 from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel
+from mininet.link import TCLink
 from mininet.node import CPULimitedHost
 import time
 
@@ -30,8 +31,11 @@ class Topo(Topo):
                 self.addLink(a,m)
         self.hostList = []
         for h in range(n):
-            host = self.addHost('h%s' % (h + 1), cpu=.5/n)
-            self.addLink(host, edge[h%len(edge)])
+            host = self.addHost('h%s' % (h + 1))#, cpu=.5/n)
+            if h == 0:
+                self.addLink(host, edge[h%len(edge)], bw=10, max_queue_size=1000)
+            else:
+                self.addLink(host, edge[h%len(edge)], bw=1, max_queue_size=1000)
             self.hostList.append(host)
 
 def simpleTest():
@@ -46,6 +50,9 @@ def simpleTest():
     for i in range(len(h)):
         if i == 0:
             h[i].cmd("python Server.py &")
+        elif i == 1:
+            h[i].cmd("python TestClient.py &")
+
             #h[i].cmd("""top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt &""")
         else:
             h[i].cmd("python Client.py "+ IPstr + " " + str(i)+" &")
