@@ -18,6 +18,9 @@ if (len(sys.argv) == 3):
 """
 from socket import *
 import sys
+import time
+
 s = socket(AF_INET,SOCK_DGRAM)
 while True:
-	s.sendto(sys.argv[2].encode(),(sys.argv[1],12001))
+	time.sleep(2)
+	s.sendto("hi".encode(),(sys.argv[1],12001))

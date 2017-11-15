@@ -56,5 +56,4 @@ s = socket(AF_INET,SOCK_DGRAM)
 s.bind(("",12001))
 while True:
 	msg, addr = s.recvfrom(1024)
-	print msg
-	s.sendto(msg.encode(),addr)
+	s.sendto(msg.encode().upper(),addr)
