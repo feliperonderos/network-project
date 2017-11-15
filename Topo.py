@@ -36,7 +36,7 @@ class Topo(Topo):
 
 def simpleTest():
     "Create and test a simple network"
-    topo = Topo(n=16)
+    topo = Topo(n=32)
     net = Mininet(topo,host=CPULimitedHost)
     net.start()
     h = net.hosts
