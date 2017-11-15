@@ -17,7 +17,7 @@ while True:
   		messages[addr] = [msg]
   connectionSock.close()
 
-"""
+
 
 
 import socket
@@ -50,3 +50,11 @@ while True:
  
 for t in threads:
     t.join()
+"""
+from socket import *
+s = socket(AF_INET,SOCK_DGRAM)
+s.bind(("",12001))
+while True:
+	msg, addr = s.recvfrom(1024)
+	print msg
+	s.sendto(msg.encode(),addr)
