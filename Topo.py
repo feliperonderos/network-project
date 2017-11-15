@@ -9,7 +9,7 @@ from mininet.log import setLogLevel
 from mininet.link import TCLink
 from mininet.node import CPULimitedHost
 import time
-
+import sys
 class Topo(Topo):
     def build(self, n=8):
         counter = 1
@@ -38,9 +38,9 @@ class Topo(Topo):
                 self.addLink(host, edge[h%len(edge)], bw=1, max_queue_size=1000)
             self.hostList.append(host)
 
-def simpleTest():
+def simpleTest(num_hosts):
     "Create and test a simple network"
-    topo = Topo(n=8)
+    topo = Topo(n=num_hosts)
     net = Mininet(topo,host=CPULimitedHost,link=TCLink)
     net.start()
     h = net.hosts
@@ -73,6 +73,7 @@ def simpleTest():
     net.stop()
 
 if __name__ == '__main__':
+
     # Tell mininet to print useful information
     setLogLevel('info')
-    simpleTest()
+    simpleTest(int(sys.argv[1]))
