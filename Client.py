@@ -19,6 +19,7 @@ if (len(sys.argv) == 3):
 from socket import *
 import sys
 import time
+import random, string
 
 s = socket(AF_INET,SOCK_DGRAM)
 st ="".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000))
