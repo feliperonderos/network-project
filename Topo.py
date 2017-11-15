@@ -61,7 +61,7 @@ def simpleTest():
     net.pingAll()
     """
     
-    time.sleep(10)
+    time.sleep(1000)
     #net.pingAll()
     net.stop()
 
