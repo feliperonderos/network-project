@@ -6,8 +6,10 @@ s.listen(5)
 while True:
   connectionSock, addr = s.accept()
   sentence = ""
-  while (sentence != "END"):
+  print 'run'
+  while sentence != "END":
   	sentence = connectionSock.recv(1024).decode()
   	cap = sentence.upper()
+  	print cap
   	connectionSock.send(cap.encode())
   connectionSock.close()

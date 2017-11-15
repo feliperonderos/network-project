@@ -7,5 +7,6 @@ if (len(sys.argv) == 3):
   	p ="pooop"#''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000))
   	while True:
   		s.send(p.encode())
-  	  s.recv(1024)
+  		print "sent"
+  		s.recv(1024)
   	s.close()
