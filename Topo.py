@@ -40,8 +40,8 @@ class Topo(Topo):
 
 def simpleTest():
     "Create and test a simple network"
-    topo = Topo(n=32)
-    net = Mininet(topo,host=CPULimitedHost)
+    topo = Topo(n=8)
+    net = Mininet(topo,host=CPULimitedHost,link=TCLink)
     net.start()
     h = net.hosts
     f = open("cl.txt","w+")
