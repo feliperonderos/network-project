@@ -33,9 +33,9 @@ class Topo(Topo):
         for h in range(n):
             host = self.addHost('h%s' % (h + 1))#, cpu=.5/n)
             if h == 0:
-                self.addLink(host, edge[h%len(edge)], bw=10, max_queue_size=1000)
+                self.addLink(host, edge[h%len(edge)], bw=1, max_queue_size=1000, use_htb=True)
             else:
-                self.addLink(host, edge[h%len(edge)], bw=1, max_queue_size=1000)
+                self.addLink(host, edge[h%len(edge)], bw=1, max_queue_size=1000, use_htb=True)
             self.hostList.append(host)
 
 def simpleTest(num_hosts):
@@ -68,8 +68,9 @@ def simpleTest(num_hosts):
     net.pingAll()
     """
     
-    time.sleep(1000)
     #net.pingAll()
+    from mininet.cli import CLI
+    CLI(net)
     net.stop()
 
 if __name__ == '__main__':
