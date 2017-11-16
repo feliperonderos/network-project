@@ -33,9 +33,11 @@ class Topo(Topo):
         for h in range(n):
             host = self.addHost('h%s' % (h + 1))#, cpu=.5/n)
             if h == 0:
-                self.addLink(host, edge[h%len(edge)], bw=1, max_queue_size=1000, use_htb=True)
+                self.addLink(host, edge[h%len(edge)], bw=1, delay='5ms', loss=2,
+                          max_queue_size=1000, use_htb=True )
             else:
-                self.addLink(host, edge[h%len(edge)], bw=1, max_queue_size=1000, use_htb=True)
+                self.addLink(host, edge[h%len(edge)], bw=1, delay='5ms', loss=2,
+                          max_queue_size=1000, use_htb=True )
             self.hostList.append(host)
 
 def simpleTest(num_hosts):
