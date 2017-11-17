@@ -29,7 +29,10 @@ class Topo(Topo):
                 edge.append(a)
                 self.addLink(a,m)
         for h in range(n):
-            host = self.addHost('h%s' % (h + 1))#, cpu=.5/n)
+            if h < 2:
+                host = self.addHost('h%s' % (h + 1))#, cpu=.5/n)
+            else:
+                host = self.addHost('h%s' % (h + 1), cpu=.25/n)
             if h == 0:
                 self.addLink(host, edge[h%len(edge)], bw=100, delay='5ms', loss=2,
                           max_queue_size=1000, use_htb=True )
@@ -47,7 +50,7 @@ def simpleTest(num_hosts):
     for i in range(len(h)):
         if i == 0:
             h[i].cmd("python Server.py &")
-        else:
+        elif i>1:
             h[i].cmd("python Client.py "+ IPstr + " " + str(i)+" &")
     CLI(net)
     net.stop()
