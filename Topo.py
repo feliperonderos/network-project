@@ -29,7 +29,7 @@ class Topo(Topo):
                 edge.append(a)
                 self.addLink(a,m)
         for h in range(n):
-            host = self.addHost('h%s' % (h + 1), cpu=.5/n)
+            host = self.addHost('h%s' % (h + 1))#, cpu=.5/n)
             if h == 0:
                 self.addLink(host, edge[h%len(edge)], bw=100, delay='5ms', loss=2,
                           max_queue_size=1000, use_htb=True )
