@@ -34,7 +34,7 @@ class Topo(Topo):
             else:
                 host = self.addHost('h%s' % (h + 1), cpu=.25/n)
             if h == 0:
-                self.addLink(host, edge[h%len(edge)], bw=100, delay='5ms', loss=2,
+                self.addLink(host, edge[h%len(edge)], bw=50, delay='5ms', loss=2,
                           max_queue_size=1000, use_htb=True )
             else:
                 self.addLink(host, edge[h%len(edge)], bw=1, delay='5ms', loss=2,
