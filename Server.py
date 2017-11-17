@@ -1,4 +1,18 @@
-"""
+from socket import *
+s = socket(AF_INET,SOCK_DGRAM)
+s.bind(("",12001))
+while True:
+	try:
+	  msg, addr = s.recvfrom(1024)
+	  s.sendto(msg.encode().upper(),addr)
+	except:
+		pass
+
+
+
+
+
+	"""
 from socket import *
 messages = {}
 port = 12001
@@ -51,9 +65,3 @@ while True:
 for t in threads:
     t.join()
 """
-from socket import *
-s = socket(AF_INET,SOCK_DGRAM)
-s.bind(("",12001))
-while True:
-	msg, addr = s.recvfrom(1024)
-	s.sendto(msg.encode().upper(),addr)

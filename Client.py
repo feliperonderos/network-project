@@ -1,3 +1,17 @@
+from socket import *
+import sys
+import time
+import random, string
+
+s = socket(AF_INET,SOCK_DGRAM)
+st ="".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000))
+while True:
+	s.sendto(st.encode(),(sys.argv[1],12001))
+
+
+
+
+
 """
 from socket import *
 import time
@@ -16,12 +30,3 @@ if (len(sys.argv) == 3):
 	  	s.close()
 
 """
-from socket import *
-import sys
-import time
-import random, string
-
-s = socket(AF_INET,SOCK_DGRAM)
-st ="".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000))
-while True:
-	s.sendto(st.encode(),(sys.argv[1],12001))
