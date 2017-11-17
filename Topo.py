@@ -62,9 +62,9 @@ if __name__ == '__main__':
 
 
 
-        #elif i == 1:
-        #    h[i].cmd("python TestClient.py "+IPstr + " &")
-      """top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt """
+    #elif i == 1:
+    #    h[i].cmd("python TestClient.py "+IPstr + " &")
+    """top | awk '/Cpu/ { print "CPU utilization:" $2 }' >> lala.txt """
 
     """
     
