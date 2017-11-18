@@ -1,0 +1,22 @@
+------------------------------------------------------------
+Server listening on UDP port 5566
+Receiving 1470 byte datagrams
+UDP buffer size:  208 KByte (default)
+------------------------------------------------------------
+[  3] local 10.0.0.1 port 5566 connected with 10.0.0.2 port 41014
+[ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
+[  3]  0.0- 1.0 sec  48.8 KBytes   400 Kbits/sec   9.859 ms  112/  146 (77%)
+[  3]  1.0- 2.0 sec  50.2 KBytes   412 Kbits/sec  13.565 ms   47/   82 (57%)
+[  3]  2.0- 3.0 sec  54.6 KBytes   447 Kbits/sec  12.082 ms   53/   91 (58%)
+[  3]  3.0- 4.0 sec  44.5 KBytes   365 Kbits/sec  10.849 ms   53/   84 (63%)
+[  3]  4.0- 5.0 sec  50.2 KBytes   412 Kbits/sec  13.384 ms   45/   80 (56%)
+[  3]  5.0- 6.0 sec  48.8 KBytes   400 Kbits/sec  12.903 ms   51/   85 (60%)
+[  3]  6.0- 7.0 sec  51.7 KBytes   423 Kbits/sec  10.504 ms   52/   88 (59%)
+[  3]  7.0- 8.0 sec  54.6 KBytes   447 Kbits/sec  13.659 ms   47/   85 (55%)
+[  3]  8.0- 9.0 sec  58.9 KBytes   482 Kbits/sec  13.622 ms   45/   86 (52%)
+[  3]  9.0-10.0 sec  37.3 KBytes   306 Kbits/sec  10.448 ms   58/   84 (69%)
+[  3] 10.0-11.0 sec  53.1 KBytes   435 Kbits/sec  10.106 ms   47/   84 (56%)
+[  3] 11.0-12.0 sec  31.6 KBytes   259 Kbits/sec  14.333 ms   54/   76 (71%)
+[  3] 12.0-13.0 sec  47.4 KBytes   388 Kbits/sec  13.604 ms   57/   90 (63%)
+[  3] 13.0-14.0 sec  43.1 KBytes   353 Kbits/sec  13.124 ms   48/   78 (62%)
+[  3]  0.0-14.8 sec   695 KBytes   384 Kbits/sec  36.078 ms  793/ 1277 (62%)
