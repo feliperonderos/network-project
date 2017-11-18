@@ -41,12 +41,6 @@ class Topo(Topo):
                           max_queue_size=1000, use_htb=True )
 
 def simpleTest(num_hosts, tcp=0):
-    if tcp== 0:
-        s = "-u "
-        file_str = ""
-    else:
-        s = ""
-        file_str = "TCP"
     "Create and test a simple network"
     topo = Topo(n=num_hosts)
     net = Mininet(topo,host=CPULimitedHost,link=TCLink)
@@ -55,18 +49,26 @@ def simpleTest(num_hosts, tcp=0):
     IPstr = str(h[0].IP())
     for i in range(len(h)):
         if i == 0:
-            h[i].cmd("python Server.py &")
-            h[i].cmd("iperf -s "+ s +"-i 1 -p 5566 > results_"+file_str+str(num_hosts)+".txt &")
+            h[i].cmd("python Server.py &")   
         elif i>1:
             h[i].cmd("python Client.py "+ IPstr + " " + str(i)+" &")
     time.sleep(5)
-    h[1].cmd("iperf -c " +IPstr + " "+ s +"-t 15 -p 5566 -b 1M &")
+    if tcp == 0:
+        h[0].cmd("iperf -s -u -i 1 -p 5566 > results_"+str(num_hosts)+".txt &")
+        time.sleep(5)
+        h[1].cmd("iperf -c " + IPstr + " -u -t 15 -p 5566 -b 1M &")
+    else:
+        h[0].cmd("iperf -s -i 1 -p 5566 > resultsTCP_"+str(num_hosts)+".txt &")
+        time.sleep(5)
+        h[1].cmd("iperf -c " + IPstr + " -t 15 -p 5566 &")
     time.sleep(60)
+    #CLI(net)
+
     net.stop()
 
 if __name__ == '__main__':
     setLogLevel('info')
-    if len(sys.argv) == 3:
+    if len(sys.argv == 3):
         simpleTest(int(sys.argv[1]),int(sys.argv[2]))
     else:
         simpleTest(int(sys.argv[1]))
