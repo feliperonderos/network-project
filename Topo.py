@@ -50,10 +50,14 @@ def simpleTest(num_hosts):
     for i in range(len(h)):
         if i == 0:
             h[i].cmd("python Server.py &")
-            h[i].cmd("iperf -s -u -i 1 p 5566 > tea.txt &")
+            h[i].cmd("iperf -s -u -i 1 -p 5566 > results_"+str(num_hosts)+".txt &")
         elif i>1:
             h[i].cmd("python Client.py "+ IPstr + " " + str(i)+" &")
-    CLI(net)
+    time.sleep(5)
+    h[1].cmd("iperf -c " +IPstr + " -u -t 15 -p 5566 -b 1M &")
+    time.sleep(60)
+    #CLI(net)
+
     net.stop()
 
 if __name__ == '__main__':
