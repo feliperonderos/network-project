@@ -59,10 +59,10 @@ def simpleTest(num_hosts, tcp=0):
         h[1].cmd("iperf -c " + IPstr + " -u -t 15 -p 5566 -b 1M &")
         time.sleep(60)
     else:
-        h[0].cmd("iperf -s -i 1 -p 5566 > resultsTCP_"+str(num_hosts)+".txt &")
+        h[0].cmd("iperf -s -i 15 -p 5566 > resultsTCP_"+str(num_hosts)+".txt &")
         time.sleep(5)
         h[1].cmd("iperf -c " + IPstr + " -t 15 -p 5566 &")
-        time.sleep(120)
+        time.sleep(60)
     
     #CLI(net)
 
