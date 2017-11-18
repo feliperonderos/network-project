@@ -66,7 +66,7 @@ def simpleTest(num_hosts, tcp=0):
 
 if __name__ == '__main__':
     setLogLevel('info')
-    if len(sys.argv == 3):
+    if len(sys.argv) == 3:
         simpleTest(int(sys.argv[1]),int(sys.argv[2]))
     else:
         simpleTest(int(sys.argv[1]))
