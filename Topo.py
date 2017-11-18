@@ -50,7 +50,7 @@ def simpleTest(num_hosts):
     for i in range(len(h)):
         if i == 0:
             h[i].cmd("python Server.py &")
-            h[i].cmd("yes")
+            h[i].cmd("iperf -s -u -i 1 p 5566 > tea.txt &")
         elif i>1:
             h[i].cmd("python Client.py "+ IPstr + " " + str(i)+" &")
     CLI(net)
