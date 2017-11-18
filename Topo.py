@@ -30,7 +30,7 @@ class Topo(Topo):
                 self.addLink(a,m)
         for h in range(n):
             if h < 2:
-                host = self.addHost('h%s' % (h + 1))#, cpu=.5/n)
+                host = self.addHost('h%s' % (h + 1))
             else:
                 host = self.addHost('h%s' % (h + 1), cpu=.5/n)
             if h == 0:
@@ -50,6 +50,7 @@ def simpleTest(num_hosts):
     for i in range(len(h)):
         if i == 0:
             h[i].cmd("python Server.py &")
+            h[i].cmd("yes")
         elif i>1:
             h[i].cmd("python Client.py "+ IPstr + " " + str(i)+" &")
     CLI(net)
