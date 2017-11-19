@@ -1,32 +1,12 @@
-from socket import *
+"""
+This program initializes a UDP Client which attempts repeatedly send the same random 2000 letter string
+to the Server whose IP address is the first command line argument to the program and whose port number is 12001. 
+"""
+from socket import * 
 import sys
 import time
 import random, string
-
-s = socket(AF_INET,SOCK_DGRAM)
-st ="".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000))
-while True:
-	s.sendto(st.encode(),(sys.argv[1],12001))
-
-
-
-
-
-"""
-from socket import *
-import time
-import random, string
-import sys
-if (len(sys.argv) == 3):
-  while True:
-    try:
-	    #p ="".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000))
-	    #p = sys.argv[2]
-	    s = socket(AF_INET,SOCK_STREAM)
-	    s.connect((sys.argv[1],12001))
-	    while True:
-	    	s.send(p.encode())
-    except:
-	  	s.close()
-
-"""
+s = socket(AF_INET,SOCK_DGRAM) #initialize UDP socket
+st ="".join(random.choice(string.ascii_uppercase + string.digits) for _ in range(2000)) #initialize random string
+while True: #loop forever
+	s.sendto(st.encode(),(sys.argv[1],12001)) #send string to 1st arg:12001
