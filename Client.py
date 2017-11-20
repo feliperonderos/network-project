@@ -1,6 +1,7 @@
 """
 This program initializes a UDP Client which attempts repeatedly send the same random 2000 letter string
-to the Server whose IP address is the first command line argument to the program and whose port number is 12001. 
+to the Server whose IP address is the first command line argument to the program and whose port number is 12001.
+This is done in an attempt to use up as much of the server's bandwidth as possible and degrade the performance of the server. 
 """
 from socket import * 
 import sys

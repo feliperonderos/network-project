@@ -1,5 +1,5 @@
 """
-This program initializes a Mininet topology with 1 core, 2 agregation and 4 edge switches with a variable number (N) of 
+This program initializes a Mininet topology with 1 core, 2 aggregation and 4 edge switches with a variable number (N) of 
 bandwidth limited hosts. It then starts a server program on the first host, and starts malicious denial of service clients 
 on hosts 3-N. After this has taken place, the first and second hosts attempt to measure the bandwidth available to clients
 using iperf with host 1 serving as the iperf Server, and host 2 serving as the iperf client. The data from this analysis is
@@ -17,7 +17,7 @@ from mininet.cli import CLI
 import time
 import sys
 """
-This function provides a topology with 7 switches and N hosts. The hosts are distrubuted evenly through the four edge switches.
+This function provides a topology with 7 switches and N hosts. The hosts are distributed evenly through the four edge switches.
 """
 class Topo(Topo):
     def build(self, n=8):
